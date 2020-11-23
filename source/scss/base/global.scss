@@ -1,0 +1,78 @@
+:root {
+  --max-width: 1232px;
+  --yellow: #FBBA3C;
+  --yellow-hover: #FCD17D;
+  --font-montserrat-14: normal 14px/17px "Montserrat", Arial, sans-serif;
+  --font-montserrat-12: normal 12px/15px "Montserrat", Arial, sans-serif;
+
+  --black: #000000;
+  --white: #ffffff;
+  --gray: #C4C4C4;
+  --gray-placeholder: #25282B;
+  --gray-border: #E8E8E8;
+  --gray-border-to-basket: #EAEAEA;
+ --gray-border:  1px solid  #E8E8E8;
+ --gray-border-1:  1px solid rgba(0,0,0,0.1);
+ --gray-border-2:  1px solid rgba(0,0,0,0.22);
+ --gray-border-5:  2px solid rgba(0,0,0,0.5);
+ --gray-border-button:  1px solid #EAEAEA;
+ --yellow-border-button:  1px solid #FBBA3C;
+ --gray-bg: #F2F2F2;
+ --radius: 4px;
+
+ --title-font: 600 32px/39px "Montserrat", Arial, sans-serif;
+}
+body {
+  min-width: 320px;
+  // max-width: 1232px;
+  padding: 0;
+  margin: 0;
+box-sizing: border-box;
+  font-family: "Montserrat", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  color: var(--black-text);
+  font-style: normal;
+  background-color: #ffffff;
+
+
+}
+
+
+
+img {
+  // max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "hidry",
+  "version": "1.0.0",
+  "description": "**Edit a file, create a new file, and clone from Bitbucket in under 2 minutes**",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --watch source/scss/style.scss:source/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ulyanakapeshina@bitbucket.org/ulyanakapeshina/hidry.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/ulyanakapeshina/hidry#readme"
+}
