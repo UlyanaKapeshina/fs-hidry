@@ -1,0 +1,41 @@
+.radio-label {
+  font: var(--font-montserrat-14);
+  padding-top: 4px;
+  padding-bottom: 3px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding-left: 30px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.input-radio + .radio-label::before {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: 2px solid var(--border-yellow);
+
+  border-radius: 50%;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input-radio:checked + .radio-label::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 4px;
+  top: 50%;
+  background: #fbba3c;
+  transform: translateY(-50%);
+}
