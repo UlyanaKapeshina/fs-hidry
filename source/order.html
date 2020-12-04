@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Hidry</title>
+</head>
+
+<body>
+  <header class="header grid" style="--cols: 12">
+    <div class="header__logo item" style="--span: 1">
+      <a href="#">
+        <img src="img/svg/logo.svg" width="57" height="48" alt="Логотип" />
+      </a>
+    </div>
+    <nav class="menu item grid" style="--span: 11; --cols: 11">
+      <button class="menu__catalog-button button item" style="--span: 2">
+        Каталог
+      </button>
+      <p class="menu__search item" style="--span: 5">
+        <input class="menu__search-input" type="text" name="menu-search" id="menu-search" value=""
+          placeholder="Хочу найти" />
+        <button class="menu__search-button" >
+          Найти
+        </button>
+      </p>
+      <button class="menu__toggle button" aria-label="Открыть/закрыть меню"></button>
+      <ul class="menu__list menu__list--closed item grid" style="--span: 4; --cols: 4">
+        <li class="menu__item menu__item--bonus">
+          <a href="#" aria-label="Бонусы">
+            <p class="menu__item-name">Бонусы</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--orders">
+          <a href="#" aria-label="Заказы">
+            <p class="menu__item-name">Заказы</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--actions">
+          <a href="#" aria-label="Акции">
+            <p class="menu__item-name">Акции</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--basket">
+          <a href="#" aria-label="Корзина">
+            <p class="menu__item-name">Корзина (<span>5</span>) </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1 class="visually-hidden">Страница заказа</h1>
+    <section class="breadcrumbs ">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a href="#" class="breadcrumbs__link">Корзина</a>
+        </li>
+        <li class="breadcrumbs__item breadcrumbs__item--current">
+          <a href="#" class="breadcrumbs__link">Оформление заказа</a>
+        </li>
+      </ul>
+    </section>
+    <section class="order grid" style="--cols: 12">
+      <h2 class="order__title item" style="--span: 12">Оформление заказа</h2>
+      <form class="order__form item grid" style="--span: 8; --cols: 8">
+        <div class="order__details item" style="--span: 4">
+          <fieldset class="order__fieldset ">
+            <legend>Получатель</legend>
+            <p>
+              <label class="order__label order__label--row" for="name">Имя
+              </label>
+              <input type="text" class="order__input" id="name" placeholder="Владимир" />
+            </p>
+            <p>
+              <label for="tel" class="order__label order__label--row">Телефон
+              </label>
+              <input type="text" class="order__input" id="tel" placeholder="+0 000-000-00-00" />
+            </p>
+          </fieldset>
+          <fieldset class="order__fieldset ">
+            <legend>Способ доставки</legend>
+            <input class="visually-hidden input-radio " type="radio" name="delivery" id="pickup" checked />
+            <label class="radio-label" for="pickup">Самовывоз</label>
+            <input class="visually-hidden input-radio " type="radio" name="delivery" id="courier" />
+            <label class="radio-label" for="courier">Курьер</label>
+          </fieldset>
+        </div>
+        <div class="order__result item" style="--span: 8">
+          <h2 class="order__list-title">2 товара на сумму 27 000₽</h2>
+          <ul class="order__list">
+            <li class="order__item">
+              <p class="order__img">
+                <img src="./img/ainu.jpg" width="100" height="79" alt="Фото товара">
+              </p>
+              <div class="order__item-wrapper">
+                <p class="order__name">Айну</p>
+                <p class="order__count">1 шт.</p>
+              </div>
+              <p class="order__cost">12 000₽</p>
+            </li>
+            <li class="order__item">
+              <p class="order__img">
+                <img src="./img/afgan.jpg" width="100" height="79" alt="Фото товара">
+              </p>
+              <div class="order__item-wrapper">
+                <p class="order__name">Афганская борзая</p>
+                <p class="order__count">1 шт.</p>
+              </div>
+              <p class="order__cost">15 000₽</p>
+            </li>
+          </ul>
+          <div class="order__sum-wrapper">
+            <table class="order__sum item" style="--span: 3">
+              <tr class="">
+                <th class="">Сумма заказа</th>
+                <td class="">27 000₽</td>
+              </tr>
+              <tr class="">
+                <th class="">Самовывоз</th>
+                <td class="">0₽</td>
+              </tr>
+              <tr class="">
+                <th class="e">Итого с доставкой</th>
+                <td class="">27 000₽</td>
+              </tr>
+            </table>
+          </div>
+          <button class="order__button button">Создать заказ</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+
+</html>

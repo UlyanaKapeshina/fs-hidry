@@ -1,0 +1,247 @@
+.menu {
+  flex-grow: 1;
+  display: flex;
+
+  &__catalog-button {
+    display: none;
+  }
+
+  &__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    margin-right: 14px;
+  }
+
+  &__search-input {
+    position: relative;
+    padding-left: 42px;
+    padding-right: 14px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    width: 139px;
+    flex-grow: 1;
+    @include font(14);
+    background-color: $white;
+    border: $yellow-border;
+    border-radius: $radius;
+
+    &::placeholder {
+      @include font(14);
+      color: $black;
+      opacity: 0.2;
+    }
+    &:hover {
+      padding-left: 58px;
+    }
+  }
+  &__search-button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    top: 0;
+    padding: 0;
+    width: 48px;
+    height: 100%;
+    font-size: 0;
+    color: transparent;
+    border: none;
+    background-color: transparent;
+    background-image: url(/source/img/svg/search.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0.2;
+
+    & svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__search-input:hover + &__search-button,
+  &__search-input:focus + &__search-button {
+    border-radius: $radius;
+    background-color: $yellow;
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  &__list {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 104px;
+    padding-bottom: 30px;
+    background-color: $white;
+    z-index: 10;
+
+    &--closed {
+      display: none;
+    }
+  }
+  &__item {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 32px;
+    margin-bottom: 21px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 32px;
+      top: 0;
+      right: 0;
+      background-image: url(/source/img/svg/bonus.svg);
+      background-repeat: no-repeat;
+      background-position: top center;
+    }
+    &--orders::before {
+      background-image: url(/source/img/svg/cube.svg);
+    }
+    &--actions::before {
+      background-image: url(/source/img/svg/actions.svg);
+    }
+    &--basket::before {
+      background-image: url(/source/img/svg/pet-house.svg);
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
+  }
+  &__item-name {
+    width: 100%;
+    text-align: center;
+    color: $black;
+    margin-top: 5px;
+  }
+
+  &__toggle {
+    background-image: url(/source/img/svg/burger.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+
+    &--open {
+      background-image: url(/source/img/svg/close.svg);
+    }
+  }
+
+  @media screen and (min-width: $tablet-width) {
+    align-items: center;
+    justify-content: center;
+
+    &__catalog-button {
+      display: block;
+      min-width: 124px;
+      max-width: 148px;
+      grid-column-start: 1;
+      grid-column-end: 2;
+      margin-right: 8px;
+      padding-left: 46px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+      background-image: url(/source/img/svg/burger.svg);
+      background-repeat: no-repeat;
+      background-position: left 20px center;
+
+      &--open {
+        background-image: url(/source/img/svg/close.svg);
+      }
+    }
+
+    &__input {
+      width: 105px;
+    }
+    &__search-input {
+      width: 105px;
+    }
+
+    &__list {
+      padding: 0;
+      width: auto;
+      height: auto;
+      display: flex;
+      flex-direction: row;
+      position: static;
+      transform: none;
+    }
+    &__item {
+      margin-right: 15px;
+      margin-bottom: 0;
+      flex-shrink: 0;
+      width: auto;
+    }
+    &__toggle {
+      display: none;
+    }
+  }
+  @media screen and (min-width: $desktop-width) {
+    &__search {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 48px;
+        height: 100%;
+        z-index: 2;
+        opacity: 0.2;
+        background-image: url(/source/img/svg/search.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+    &__search-input {
+      &:hover {
+        padding-left: 42px;
+      }
+    }
+    &__search-button {
+      width: 111px;
+      right: 0;
+      left: auto;
+      background-color: $yellow;
+      opacity: 1;
+      border-radius: $radius;
+      background-image: none;
+      @include font(14, 500);
+      color: $black;
+      cursor: pointer;
+
+      &:hover,
+      &:focus {
+        background-color: $yellow-hover;
+      }
+      &:active {
+        background-color: $yellow-active;
+        transform: scale(0.98);
+      }
+    }
+
+    &__item {
+      margin: 0;
+    }
+  }
+}

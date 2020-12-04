@@ -1,17 +1,21 @@
 @import "base/normalise";
 @import "utils/variables.scss";
 @import "base/global";
+@import "utils/mixins/wrap.scss";
+@import "utils/mixins/font.scss";
+@import "utils/mixins/border.scss";
 @import "components/button.scss";
-@import "components/input.scss";
+@import "components/page-title.scss";
 @import "components/radiobutton.scss";
 @import "components/checkbox.scss";
+@import "components/count-controls.scss";
 @import "components/breadcrumbs.scss";
-
+@import "components/menu.scss";
 @import "components/basket.scss";
-@import "components/card-product.scss";
+@import "components/card.scss";
 @import "components/filter.scss";
 @import "components/catalog.scss";
-@import "components/footer.scss";
 @import "components/order.scss";
 @import "components/header";
+@import "components/shadow-layer";
 @import "components/grid";

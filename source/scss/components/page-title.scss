@@ -1,0 +1,12 @@
+%page-title {
+  @include wrap;
+  @include font(24, 600);
+  padding-top: 14px;
+  padding-bottom: 17px;
+  border-bottom: $gray-border;
+
+  @media screen and (min-width: $tablet-width) {
+    padding-top: 14px;
+    @include font(32, 600);
+  }
+}

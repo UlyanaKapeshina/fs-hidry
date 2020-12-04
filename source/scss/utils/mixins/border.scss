@@ -1,0 +1,5 @@
+@mixin border($url, $x, $y) {
+  background-image: $url;
+  background-repeat: no-repeat;
+  background-position: $x $y;
+}

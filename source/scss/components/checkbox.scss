@@ -1,5 +1,5 @@
 .checkbox-label {
-  font: var(--font-montserrat-14);
+  @include font(14);
   padding-top: 4px;
   padding-bottom: 3px;
   position: relative;
@@ -7,38 +7,74 @@
   cursor: pointer;
   padding-left: 32px;
   margin-bottom: 8px;
+  &--empty {
+    padding: 0;
+    margin: 0;
+    width: 24px;
+    flex-shrink: 0;
+  }
+  &--remove {
+    padding-left: 0;
+    padding-right: 32px;
+    &:hover::before {
+      background-image: url(/source/img/svg/delete-hover.svg);
+    }
+  }
 }
+.checkbox-input {
+  @extend .visually-hidden;
 
-.input-checkbox + .checkbox-label::before {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  background: #ffffff;
-  border: 1px solid #e8e8e8;
-  box-sizing: border-box;
-  border-radius: 4px;
-  left: 0;
-  top: 0;
-}
+  & + .checkbox-label {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      background: $white;
+      border: $gray-border;
+      box-sizing: border-box;
+      border-radius: $radius;
+      left: 0;
+      top: 0;
+    }
 
-.input-checkbox:checked + .checkbox-label::after {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 0;
-  top: 0;
-  background-image: url(/source/img/svg/check.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-}
+    &:hover::before,
+    &:focus::before {
+      border-color: $yellow;
+    }
+  }
+  & + .checkbox-label--empty::before {
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-.input-checkbox:disabled + .checkbox-label::before {
-  content: "";
-  position: absolute;
-  width: 23px;
-  height: 23px;
-  left: -40px;
-  top: 0;
+  &:checked + .checkbox-label::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-image: url(/source/img/svg/check.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+
+  & + .checkbox-label--remove::before {
+    left: auto;
+    right: 0;
+    border: 0;
+    background-color: transparent;
+    background-image: url(/source/img/svg/delete.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  &:focus + .checkbox-label,
+  &:hover + .checkbox-label {
+    color: rgba(0, 0, 0, 0.6);
+    &::before {
+      border-color: $yellow;
+    }
+  }
 }

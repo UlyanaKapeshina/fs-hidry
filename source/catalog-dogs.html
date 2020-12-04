@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Hidry</title>
+</head>
+
+<body>
+  <header class="header grid" style="--cols: 12">
+    <div class="header__logo item" style="--span: 1">
+      <a href="#">
+        <img src="img/svg/logo.svg" width="57" height="48" alt="Логотип" />
+      </a>
+    </div>
+    <nav class="menu item grid" style="--span: 11; --cols: 11">
+      <button class="menu__catalog-button button item" style="--span: 2">
+        Каталог
+      </button>
+      <p class="menu__search item" style="--span: 5">
+        <input class="menu__search-input" type="text" name="menu-search" id="menu-search" value=""
+          placeholder="Хочу найти" />
+        <button class="menu__search-button">
+          Найти
+        </button>
+      </p>
+      <button class="menu__toggle button" aria-label="Открыть/закрыть меню"></button>
+      <ul class="menu__list menu__list--closed item grid" style="--span: 4; --cols: 4">
+        <li class="menu__item menu__item--bonus">
+          <a href="" aria-label="Бонусы">
+            <p class="menu__item-name">Бонусы</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--orders">
+          <a href="" aria-label="Заказы">
+            <p class="menu__item-name">Заказы</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--actions">
+          <a href="" aria-label="Акции">
+            <p class="menu__item-name">Акции</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--basket">
+          <a href="" aria-label="Корзина">
+            <p class="menu__item-name">Корзина (<span>5</span>) </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1 class="visually-hidden">Магазин собачек и котиков</h1>
+    <section class="breadcrumbs">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a href="catalog.html" class="breadcrumbs__link">Каталог товаров</a>
+        </li>
+        <li class="breadcrumbs__item breadcrumbs__item--current">
+          <a class="breadcrumbs__link">Собачки</a>
+        </li>
+      </ul>
+    </section>
+    <section class="basket basket--hide">
+      <h2 class="basket__title">Ваша корзина</h2>
+      <fieldset class="basket__controls">
+        <p class="basket__check-all">
+          <input class="checkbox-input" type="checkbox" name="check-all" id="check-all" />
+          <label class="checkbox-label" for="check-all">Выбрать всё</label>
+        </p>
+        <button class="basket__delete-all">Удалить всё
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g opacity="0.5">
+              <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
+                stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </g>
+          </svg>
+        </button>
+      </fieldset>
+      <ul class="basket__list">
+        <li class="basket__item">
+          <p class="basket__item-checkbox">
+            <input class="checkbox-input" type="checkbox" name="check-item1" id="check-item1" />
+            <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
+          </p>
+          <p class="basket__item-img">
+            <img src="./img/ainu.jpg" alt="Айну" width="100" height="79">
+          </p>
+          <p class="basket__item-name">Айну</p>
+          <div class="count-controls">
+            <button class="count-controls__button">-</button>
+            <output class="count-controls__result">1</output>
+            <button class="count-controls__button">+</button>
+          </div>
+          <p class="basket__cost basket__cost--desktop">12 000₽</p>
+          <button class="basket__item-remove">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
+                  stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </g>
+            </svg>
+          </button>
+        </li>
+        <li class="basket__item">
+          <p class="basket__item-checkbox">
+            <input class="checkbox-input" type="checkbox" name="check-item1" id="check-item1" />
+            <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
+          </p>
+          <p class="basket__item-img">
+            <img src="./img/ainu.jpg" alt="Айну" width="100" height="79">
+          </p>
+          <p class="basket__item-name">Айну</p>
+          <div class="count-controls">
+            <button class="count-controls__button">-</button>
+            <output class="count-controls__result">1</output>
+            <button class="count-controls__button">+</button>
+          </div>
+          <p class="basket__cost basket__cost--desktop">12 000₽</p>
+          <button class="basket__item-remove">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.5">
+                <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path
+                  d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
+                  stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </g>
+            </svg>
+          </button>
+        </li>
+      </ul>
+      <p class="basket__result">2 товара на сумму <span>27 000₽</span></p>
+      <a href="order.html" class="button">Оформить заказ</a>
+      <button class="close"></button>
+    </section>
+    <section class="catalog grid" style="--cols: 12">
+      <h2 class="catalog__title  item" style="--span: 12">Собачки</h2>
+      <div class="catalog__type catalog__type--hide item" style="--span: 12">
+        <input checked type="radio" name="catalog-type" class="catalog__type-input visually-hidden" id="dogs" /><label
+          class="catalog__type-label" for="dogs">Собачки</label>
+        <input type="radio" name="catalog-type" class="catalog__type-input visually-hidden" id="cats" /><label
+          class="catalog__type-label catalog__type-label--cats" for="cats">Котики</label>
+      </div>
+      <div class="catalog__wrapper item grid" style="--span: 12; --cols: 12">
+        <button class="catalog__filter-button">Фильтр</button>
+        <div class="filter filter--hide item" style="--span: 3">
+          <div class="filter__title-container">
+            <button class="filter__close" aria-label="закрыть фильтр"></button>
+            <h2 class="filter__title">Фильтр</h2>
+          </div>
+
+          <fieldset class="filter__fieldset">
+            <legend>Тип</legend>
+            <div class="filter__panel">
+              <input class="checkbox-input" type="checkbox" name="type" id="type1" />
+              <label class="checkbox-label" for="type1">Охотничьи</label>
+              <input class="checkbox-input" type="checkbox" name="type" id="type2" />
+              <label class="checkbox-label" for="type2">Компаньоны</label>
+              <input class="checkbox-input" type="checkbox" name="type" id="type3" />
+              <label class="checkbox-label" for="type3">Декоративные</label>
+              <input class="checkbox-input" type="checkbox" name="type" id="type4" />
+              <label class="checkbox-label" for="type4">Служебные</label>
+            </div>
+
+          </fieldset>
+          <fieldset class="filter__fieldset">
+            <legend>Основные черты</legend>
+            <div class="filter__panel">
+              <p class="filter__search">
+                <input type="text" name="filter-search" id="filter-search" value="" placeholder="Быстрый поиск" />
+                <label for="filter-search"></label>
+              </p>
+              <input class="checkbox-input" type="checkbox" name="features" id="features1" />
+              <label class="checkbox-label" for="features1">Отсутствует чувство страха</label>
+              <input class="checkbox-input" type="checkbox" name="features" id="features2" />
+              <label class="checkbox-label" for="features2">Мало линяет</label>
+              <input class="checkbox-input" type="checkbox" name="features" id="features3" />
+              <label class="checkbox-label" for="features3">Отличное здоровье</label>
+              <input class="checkbox-input" type="checkbox" name="features" id="features4" />
+              <label class="checkbox-label" for="features4">Хорошее послушание</label>
+              <input class="checkbox-input" type="checkbox" name="features" id="features5" />
+              <label class="checkbox-label" for="features5">Очень преданная</label>
+              <button class="filter__button-more">Показать все</button>
+            </div>
+
+          </fieldset>
+          <fieldset class="filter__fieldset filter__fieldset--row">
+            <legend>Размер</legend>
+            <div class="filter__panel">
+              <label class="filter__size-label filter__size-label--row" for="">от
+                <input type="text" class="filter__size-input" placeholder="11" />
+              </label>
+              <label for="" class="filter__size-label filter__size-label--row">до
+                <input type="text" class="filter__size-input" placeholder="21" />
+              </label>
+            </div>
+
+          </fieldset>
+        </div>
+        <ul class="catalog__list item" style="--span: 9">
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" />
+                </div>
+              </div>
+              <p class="catalog__description">Айну</p>
+              <p class="catalog__cost">12000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="" class="catalog__item-link">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="shadow-layer shadow-layer--hide"></div>
+    <div class="shadow-layer-filter shadow-layer-filter--hide"></div>
+  </main>
+</body>
+
+</html>

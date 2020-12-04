@@ -1,0 +1,24 @@
+.count-controls {
+  display: flex;
+  align-items: center;
+  &__button {
+    width: 24px;
+    height: 24px;
+    background-color: $white;
+    border: 1px solid transparent;
+    border-radius: $radius;
+    cursor: pointer;
+    @include font(20);
+    &:hover,
+    &:focus {
+      border-color: $yellow;
+    }
+    &:active {
+      transform: scale(0.95);
+    }
+  }
+  &__result {
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}

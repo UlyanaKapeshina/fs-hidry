@@ -1,0 +1,135 @@
+.card {
+  &__title {
+    @extend %page-title;
+    margin-bottom: 24px;
+  }
+
+  &__image {
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 75%;
+    margin-bottom: 17px;
+
+    div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__table {
+    display: block;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+    caption {
+      @include font(20, 600);
+      margin-bottom: 10px;
+    }
+    th {
+      width: 50%;
+      @include font(16);
+      font-weight: 400;
+      text-align: left;
+      opacity: 0.5;
+      vertical-align: text-top;
+      padding-right: 10px;
+      padding-left: 20px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    td {
+      width: 50%;
+      @include font;
+      padding-right: 20px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    tr {
+      &:nth-child(2n + 1) {
+        background-color: $items-gray;
+      }
+    }
+    tfoot {
+      display: block;
+      tr {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      tr:nth-child(2n + 1) {
+        background-color: transparent;
+      }
+      th {
+        width: 100%;
+        opacity: 1;
+        font-weight: 500;
+      }
+      td {
+        width: 100%;
+        @include font(32, 600);
+        color: $yellow;
+        padding-left: 20px;
+      }
+    }
+  }
+  &__buttons {
+    @include wrap;
+    margin-bottom: 49px;
+    display: flex;
+  }
+  &__button {
+    margin-right: 11px;
+  }
+  @media screen and (min-width: $tablet-width) {
+    &__inner {
+      @include wrap;
+    }
+    &__image {
+      margin-right: 0;
+      margin-left: 0;
+      margin-bottom: 24px;
+
+      border-radius: 8px;
+      img {
+      }
+    }
+    &__table {
+      caption {
+        text-align: left;
+      }
+    }
+  }
+  @media screen and (min-width: $desktop-width) {
+    &__inner {
+      align-items: start;
+    }
+    &__image {
+      & div {
+        height: auto;
+      }
+    }
+    &__buttons {
+      margin-bottom: 27px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    &__table {
+      td {
+        @include font(16);
+      }
+      tfoot {
+        th {
+          padding-top: 18px;
+        }
+      }
+    }
+  }
+}

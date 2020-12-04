@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Hidry</title>
+</head>
+
+<body>
+  <header class="header grid" style="--cols: 12">
+    <div class="header__logo item" style="--span: 1">
+      <a href="#">
+        <img src="img/svg/logo.svg" width="57" height="48" alt="Логотип" />
+      </a>
+    </div>
+    <nav class="menu item grid" style="--span: 11; --cols: 11">
+      <button class="menu__catalog-button button item" style="--span: 2">
+        Каталог
+      </button>
+      <p class="menu__search item" style="--span: 5">
+        <input class="menu__search-input" type="text" name="menu-search" id="menu-search" value=""
+          placeholder="Хочу найти" />
+        <button class="menu__search-button">
+          Найти
+        </button>
+      </p>
+      <button class="menu__toggle button" aria-label="Открыть/закрыть меню"></button>
+      <ul class="menu__list menu__list--closed item grid" style="--span: 4; --cols: 4">
+        <li class="menu__item menu__item--bonus">
+          <a href="" aria-label="Бонусы">
+            <p class="menu__item-name">Бонусы</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--orders">
+          <a href="" aria-label="Заказы">
+            <p class="menu__item-name">Заказы</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--actions">
+          <a href="" aria-label="Акции">
+            <p class="menu__item-name">Акции</p>
+          </a>
+        </li>
+        <li class="menu__item menu__item--basket">
+          <a href="" aria-label="Корзина">
+            <p class="menu__item-name">Корзина (<span>5</span>) </p>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1 class="visually-hidden">Страница товара</h1>
+    <section class="breadcrumbs ">
+      <ul class="breadcrumbs__list">
+        <li class="breadcrumbs__item">
+          <a href="catalog-dogs.html" class="breadcrumbs__link">Каталог товаров</a>
+        </li>
+        <li class="breadcrumbs__item">
+          <a href="catalog-dogs.html" class="breadcrumbs__link">Собачки</a>
+        </li>
+        <li class="breadcrumbs__item breadcrumbs__item--current">
+          <a class="breadcrumbs__link">Айну</a>
+        </li>
+      </ul>
+    </section>
+    <section class="card grid" style="--cols: 12">
+      <h2 class="card__title item" style="--span: 12">
+        Айну
+      </h2>
+      <div class="card__inner item grid" style="--span: 12; --cols: 12">
+        <div class="card__image item" style="--span: 5">
+          <div>
+            <img src="./img/ainu.jpg" alt="Айну" width="280" height="222" />
+          </div>
+        </div>
+        <div class="item card__description" style="--span: 7">
+          <table class="card__table">
+            <caption>Характеристика Айну</caption>
+            <tr>
+              <th>Тип</th>
+              <td>Охотничьи, Компаньоны</td>
+            </tr>
+            <tr>
+              <th>Размер</th>
+              <td>Средняя (11-25кг)</td>
+            </tr>
+            <tr>
+              <th>Основные черты</th>
+              <td>Очень преданная, Дружелюбная, Подходит для охоты, Мало лает</td>
+            </tr>
+            <tr>
+              <th>Частые заболевания</th>
+              <td>Глухота, Паралич гортани</td>
+            </tr>
+            <tr>
+              <th>Интеллект</th>
+              <td>45%</td>
+            </tr>
+            <tfoot>
+              <tr>
+                <th>Стоимость</th>
+                <td>12 000₽</td>
+              </tr>
+            </tfoot>
+          </table>
+          <div class="card__buttons">
+            <button class="card__button button">Забрать</button>
+            <button class="card__button-basket button button--white">Добавить в корзину</button>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+
+</html>
