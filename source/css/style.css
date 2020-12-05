@@ -1057,6 +1057,7 @@ main {
   height: 20px;
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 }
 .basket .close::before, .basket .close::after {
   content: "";
@@ -1070,6 +1071,12 @@ main {
 }
 .basket .close::after {
   transform: rotate(45deg);
+}
+.basket .close:hover, .basket .close:focus, .basket .close:active {
+  opacity: 0.5;
+}
+.basket .close:active {
+  transform: scale(0.9);
 }
 @media screen and (min-width: 640px) {
   .basket {

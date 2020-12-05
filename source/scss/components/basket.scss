@@ -123,6 +123,7 @@
     height: 20px;
     border: 0;
     background-color: transparent;
+    cursor: pointer;
     &::before,
     &::after {
       content: "";
@@ -136,6 +137,14 @@
     }
     &::after {
       transform: rotate(45deg);
+    }
+    &:hover,
+    &:focus,
+    &:active {
+      opacity: 0.5;
+    }
+    &:active {
+      transform: scale(0.9);
     }
   }
   @media screen and (min-width: $tablet-width) {
