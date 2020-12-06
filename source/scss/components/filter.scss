@@ -98,7 +98,6 @@
   }
   &__panel {
     transition: max-height 2s;
-    // max-height: 0;
     overflow: hidden;
   }
 
@@ -121,6 +120,7 @@
       background-color: $white;
       border-radius: $radius;
       @include font(14);
+      font-family: "Montserrat", Arial, sans-serif;
       &::placeholder {
         @include font(14);
         color: $black;

@@ -25,17 +25,21 @@
   @extend .visually-hidden;
 
   & + .checkbox-label {
-    &::before {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       width: 24px;
       height: 24px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &::before {
       background: $white;
       border: $gray-border;
       box-sizing: border-box;
       border-radius: $radius;
-      left: 0;
-      top: 0;
     }
 
     &:hover::before,
@@ -43,19 +47,8 @@
       border-color: $yellow;
     }
   }
-  & + .checkbox-label--empty::before {
-    top: 50%;
-    transform: translateY(-50%);
-  }
 
   &:checked + .checkbox-label::after {
-    content: "";
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
     background-image: url(/source/img/svg/check.svg);
     background-repeat: no-repeat;
     background-position: center center;

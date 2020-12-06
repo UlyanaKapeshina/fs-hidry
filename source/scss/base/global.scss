@@ -59,7 +59,5 @@ main {
   background-color: #f9f9f9;
   flex-grow: 1;
   @media screen and (min-width: $desktop-width) {
-    max-width: $max-width;
-    margin: 0 auto;
   }
 }

@@ -109,6 +109,8 @@
   }
   @media screen and (min-width: $desktop-width) {
     &__inner {
+      max-width: $max-width;
+      margin: 0 auto;
       align-items: start;
     }
     &__image {

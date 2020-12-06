@@ -2,17 +2,19 @@
   position: relative;
   width: 100%;
   @include wrap;
-  padding-top: 18px;
   display: flex;
   align-items: center;
   background-color: $white;
-  padding-bottom: 17px;
 
   &__logo {
     display: flex;
-    margin-right: 14px;
+
     .current {
       cursor: default;
+    }
+    img {
+      width: 57px;
+      height: 48px;
     }
   }
 

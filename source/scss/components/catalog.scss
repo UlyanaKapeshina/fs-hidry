@@ -1,7 +1,7 @@
 .catalog {
   &__title {
     @extend %page-title;
-    margin-bottom: 16px;
+
     &--hide {
       display: none;
     }
@@ -40,7 +40,7 @@
     color: $black;
     &:hover,
     &:focus {
-      // border: $yellow-border;
+      border: $yellow-border;
       .catalog__description {
         color: $yellow;
       }
@@ -153,11 +153,9 @@
     }
   }
   @media screen and (min-width: $desktop-width) {
-    max-width: $max-width;
-    margin: 0 auto;
     &__wrapper {
-      padding-left: 40px;
-      padding-right: 40px;
+      max-width: $max-width;
+      margin: 0 auto;
       align-items: start;
     }
 

@@ -4,11 +4,12 @@
     padding-bottom: 26px;
     padding-top: 14px;
   }
-  &__form {
-    padding-top: 14px;
+
+  &__details {
+    @include wrap;
   }
   &__fieldset {
-    @include wrap;
+    padding: 0;
     margin-bottom: 30px;
     border: none;
     legend {
@@ -32,10 +33,15 @@
     border: $gray-border;
     border-radius: $radius;
     margin-bottom: 14px;
+    font-family: "Montserrat", Arial, sans-serif;
 
     &::placeholder {
       opacity: 1;
       @include font(16);
+    }
+    &:hover,
+    &:focus {
+      border-color: $yellow;
     }
   }
   &__label {
@@ -67,6 +73,11 @@
     flex-wrap: wrap;
     @include font(16);
     padding-bottom: 13px;
+  }
+  &__item-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   &__img {
     margin-right: 14px;
@@ -125,9 +136,6 @@
     margin-bottom: 75px;
   }
   @media screen and (min-width: $tablet-width) {
-    &__form {
-      padding-top: 24px;
-    }
     &__fieldset {
       p {
         max-width: 400px;
@@ -165,11 +173,13 @@
       flex-grow: 1;
       margin-right: 109px;
     }
+    &__name {
+      margin-bottom: 0;
+    }
     &__cost {
       width: auto;
     }
     &__sum-wrapper {
-      // @include wrap;
       width: 296px;
       box-sizing: content-box;
     }
@@ -186,6 +196,11 @@
     }
   }
   @media screen and (min-width: $desktop-width) {
+    &__form {
+      // @include wrap;
+      max-width: $max-width;
+      margin: 0 auto;
+    }
     &__label {
       width: 100%;
     }
