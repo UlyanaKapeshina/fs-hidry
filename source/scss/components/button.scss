@@ -1,0 +1,39 @@
+.button {
+  padding: 12px 20px;
+  @include font(14, 500);
+  color: $black;
+  border: none;
+  border-radius: $radius;
+  background-color: $yellow;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $yellow-hover;
+  }
+  &:active {
+    background-color: $yellow-active;
+    transform: scale(0.98);
+  }
+  &--big {
+    padding: 18px 20px;
+  }
+  &--white {
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: $white;
+    border: $gray-border;
+    &:hover,
+    &:focus {
+      background-color: $white;
+      border-color: $black;
+      opacity: 0.3;
+    }
+  }
+  @media screen and (min-width: $tablet-width) {
+    &--white {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+}

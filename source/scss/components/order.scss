@@ -1,0 +1,217 @@
+.order {
+  &__title {
+    @extend %page-title;
+    padding-bottom: 26px;
+    padding-top: 14px;
+  }
+
+  &__details {
+    @include wrap;
+  }
+  &__fieldset {
+    padding: 0;
+    margin-bottom: 30px;
+    border: none;
+    legend {
+      @include font(20, 600);
+      margin-bottom: 20px;
+    }
+    p {
+      max-width: 280px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__input {
+    width: 192px;
+    max-width: 272px;
+    padding-bottom: 13px;
+    padding-top: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+    border: $gray-border;
+    border-radius: $radius;
+    margin-bottom: 14px;
+    font-family: "Montserrat", Arial, sans-serif;
+
+    &::placeholder {
+      opacity: 1;
+      @include font(16);
+    }
+    &:hover,
+    &:focus {
+      border-color: $yellow;
+    }
+  }
+  &__label {
+    @include font(16);
+    margin-bottom: 14px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+  }
+  &__list-title {
+    @include wrap;
+    padding-bottom: 10px;
+    padding-top: 0;
+    @include font(20, 600);
+    border-bottom: $gray-border;
+  }
+
+  &__item {
+    @include wrap;
+    padding-top: 30px;
+    border-bottom: $gray-border;
+    display: flex;
+    flex-wrap: wrap;
+    @include font(16);
+    padding-bottom: 13px;
+  }
+  &__item-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__img {
+    margin-right: 14px;
+    margin-bottom: 5px;
+    img {
+      border-radius: $radius;
+    }
+  }
+  &__name {
+    margin-bottom: 13px;
+  }
+
+  &__cost {
+    width: 100%;
+    margin-left: 17px;
+    font-weight: 600;
+  }
+  &__sum {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 7px;
+    tr {
+      @include wrap;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: $gray-border;
+
+      &:last-child {
+        border-bottom: none;
+
+        th,
+        td {
+          font-weight: 600;
+        }
+      }
+    }
+    th {
+      text-align: left;
+      font-weight: normal;
+    }
+    td {
+      min-width: 100px;
+      padding-bottom: 15px;
+      padding-top: 9px;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+  &__button {
+    width: 296px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 75px;
+  }
+  @media screen and (min-width: $tablet-width) {
+    &__fieldset {
+      p {
+        max-width: 400px;
+      }
+    }
+    &__input {
+      width: 272px;
+    }
+    &__result {
+      @include wrap;
+    }
+    &__list-title {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    &__item {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 13px;
+      padding-right: 0;
+      padding-left: 0;
+    }
+    &__img {
+      margin-bottom: 0;
+
+      img {
+        display: block;
+      }
+    }
+    &__item-wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-grow: 1;
+      margin-right: 109px;
+    }
+    &__name {
+      margin-bottom: 0;
+    }
+    &__cost {
+      width: auto;
+    }
+    &__sum-wrapper {
+      width: 296px;
+      box-sizing: content-box;
+    }
+    &__sum {
+      @include font(16);
+      tr {
+        padding-right: 0;
+        padding-left: 0;
+      }
+    }
+    &__button {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  @media screen and (min-width: $desktop-width) {
+    &__form {
+      // @include wrap;
+      max-width: $max-width;
+      margin: 0 auto;
+    }
+    &__label {
+      width: 100%;
+    }
+    &__button {
+      width: 296px;
+      margin: 0;
+      margin-bottom: 34px;
+    }
+    &__item {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}

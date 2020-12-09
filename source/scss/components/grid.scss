@@ -1,0 +1,12 @@
+@media screen and (min-width: $desktop-width) {
+  .grid {
+    display: grid;
+    --cols: 12;
+    grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+    grid-column-gap: 16px;
+  }
+  .item {
+    --span: 4;
+    grid-column: span var(--span);
+  }
+}

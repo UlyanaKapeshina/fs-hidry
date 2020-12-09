@@ -1,0 +1,25 @@
+%page-title {
+  border-bottom: $gray-border;
+  padding-top: 14px;
+  padding-bottom: 17px;
+  margin-bottom: 16px;
+  h2 {
+    @include wrap;
+    @include font(24, 600);
+  }
+
+  @media screen and (min-width: $tablet-width) {
+    padding-top: 14px;
+    h2 {
+      @include font(32, 600);
+    }
+  }
+  @media screen and (min-width: $desktop-width) {
+    width: 100%;
+    margin-bottom: 24px;
+    h2 {
+      max-width: $max-width;
+      margin: 0 auto;
+    }
+  }
+}

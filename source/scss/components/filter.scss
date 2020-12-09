@@ -1,0 +1,229 @@
+.filter {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  background-color: $filter-gray-color;
+  z-index: 20;
+  padding-bottom: 23px;
+
+  &--hide {
+    display: none;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+  }
+  &__title-container {
+    display: flex;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    width: 100%;
+    padding-top: 16px;
+    padding-bottom: 14px;
+    text-align: center;
+
+    border-bottom: $gray-border;
+  }
+  &__close {
+    position: absolute;
+
+    left: 0;
+    width: 48px;
+    height: 100%;
+    border: 0;
+    background-color: transparent;
+    background-image: url(/source/img/svg/arrow-left.svg);
+    background-repeat: no-repeat;
+    background-position: center left 20px;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+    &:active {
+      opacity: 0.3;
+      transform: scale(0.9);
+    }
+  }
+
+  &__fieldset {
+    padding: 0px 20px;
+    padding-bottom: 6px;
+    margin-bottom: 14px;
+    border: none;
+    border-bottom: $gray-border;
+
+    legend {
+      width: 100%;
+      position: relative;
+      margin-bottom: 14px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 100%;
+        top: 0;
+        right: 0;
+        background-image: url(/source/img/svg/Arrow.svg);
+        background-repeat: no-repeat;
+        background-position: center right;
+        opacity: 0.5;
+      }
+      &:hover::before,
+      &:focus::before {
+        opacity: 1;
+      }
+      &:active::before {
+        opacity: 1;
+        transform: scale(0.9);
+      }
+    }
+
+    &:last-child {
+      border: none;
+      margin: 0;
+    }
+  }
+  &__panel {
+    transition: max-height 2s;
+    overflow: hidden;
+  }
+
+  &__search {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    margin-bottom: 14px;
+    box-sizing: border-box;
+
+    input {
+      position: relative;
+      width: 100%;
+      border: 1px solid transparent;
+      padding-top: 7px;
+      padding-bottom: 8px;
+      padding-left: 34px;
+      padding-right: 14px;
+      flex-grow: 1;
+      background-color: $white;
+      border-radius: $radius;
+      @include font(14);
+      font-family: "Montserrat", Arial, sans-serif;
+      &::placeholder {
+        @include font(14);
+        color: $black;
+        opacity: 0.2;
+      }
+      &:hover {
+        border-color: $yellow;
+      }
+    }
+    label {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 0;
+      top: 0;
+      width: 34px;
+      height: 100%;
+      background-image: url(/source/img/svg/search.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.2;
+    }
+
+    input:hover + label,
+    input:focus + label,
+    input:active + label {
+      opacity: 1;
+    }
+  }
+
+  &__button-more {
+    margin-bottom: 14px;
+    background-color: transparent;
+    border: none;
+    color: $yellow;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+      color: $yellow-hover;
+    }
+    &:active {
+      color: $yellow-hover;
+      opacity: 0.8;
+    }
+  }
+
+  &__size-input {
+    width: 70px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    background-color: $white;
+    @include font(14);
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 14px;
+    margin-right: 14px;
+
+    &::placeholder {
+      @include font(14);
+      color: $black;
+      opacity: 1;
+    }
+    &:hover {
+      border-color: $yellow;
+    }
+  }
+
+  @media screen and (min-width: $tablet-width) {
+    width: 320px;
+
+    &__fieldset--row {
+      .filter__panel {
+        display: flex;
+      }
+    }
+
+    &__size-label {
+      &--row {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      &__input {
+        margin: 0;
+        max-width: 70px;
+        width: auto;
+      }
+    }
+  }
+  @media screen and (min-width: $desktop-width) {
+    display: flex;
+    position: static;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    &__close {
+      display: none;
+    }
+  }
+}

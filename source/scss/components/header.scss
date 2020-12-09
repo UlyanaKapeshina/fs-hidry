@@ -1,0 +1,39 @@
+.header {
+  position: relative;
+  width: 100%;
+  @include wrap;
+  display: flex;
+  align-items: center;
+  background-color: $white;
+
+  &__logo {
+    display: flex;
+
+    .current {
+      cursor: default;
+    }
+    img {
+      width: 57px;
+      height: 48px;
+    }
+  }
+
+  @media screen and (min-width: $tablet-width) {
+    &__logo {
+      & img {
+        width: 52px;
+      }
+    }
+  }
+  @media screen and (min-width: $desktop-width) {
+    max-width: $max-width;
+    margin: 0 auto;
+
+    &__logo {
+      img {
+        width: 88px;
+        height: 72px;
+      }
+    }
+  }
+}
