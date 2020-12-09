@@ -4,31 +4,32 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <title>Hidry</title>
 </head>
 
-<body>
+<body class="overflow-hidden ">
   <header class="header grid" style="--cols: 12">
     <div class="header__logo item" style="--span: 1">
-      <a href="#">
-        <img src="img/svg/logo.svg" width="57" height="48" alt="Логотип" />
+      <a class="current">
+        <img src="assets/img/svg/logo.svg" width="57" height="48" alt="Логотип" />
       </a>
     </div>
     <nav class="menu item grid" style="--span: 11; --cols: 11">
-      <button class="menu__catalog-button button item" style="--span: 2">
+      <button class="menu__catalog-button menu__catalog-button--open button item" style="--span: 2">
         Каталог
       </button>
       <p class="menu__search item" style="--span: 5">
         <input class="menu__search-input" type="text" name="menu-search" id="menu-search" value=""
           placeholder="Хочу найти" />
-        <button class="menu__search-button">
+        <button class="menu__search-button" >
           Найти
         </button>
       </p>
       <button class="menu__toggle button" aria-label="Открыть/закрыть меню"></button>
-      <ul class="menu__list menu__list--closed item " style="--span: 4">
+      <ul class="menu__list menu__list item " style="--span: 4">
         <li class="menu__item menu__item--bonus">
           <a href="" aria-label="Бонусы">
             <p class="menu__item-name">Бонусы</p>
@@ -54,16 +55,6 @@
   </header>
   <main>
     <h1 class="visually-hidden">Магазин собачек и котиков</h1>
-    <section class="breadcrumbs">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item">
-          <a href="catalog.html" class="breadcrumbs__link">Каталог товаров</a>
-        </li>
-        <li class="breadcrumbs__item breadcrumbs__item--current">
-          <a class="breadcrumbs__link">Собачки</a>
-        </li>
-      </ul>
-    </section>
     <section class="basket basket--hide">
       <h2 class="basket__title">Ваша корзина</h2>
       <fieldset class="basket__controls">
@@ -94,7 +85,7 @@
             <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
           </p>
           <p class="basket__item-img">
-            <img src="./img/ainu.jpg" alt="Айну" width="100" height="79">
+            <img src="./assets/img/ainu.jpg" alt="Айну" width="100" height="79">
           </p>
           <p class="basket__item-name">Айну</p>
           <div class="count-controls">
@@ -125,7 +116,7 @@
             <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
           </p>
           <p class="basket__item-img">
-            <img src="./img/ainu.jpg" alt="Айну" width="100" height="79">
+            <img src="./assets/img/ainu.jpg" alt="Айну" width="100" height="79">
           </p>
           <p class="basket__item-name">Айну</p>
           <div class="count-controls">
@@ -155,16 +146,18 @@
       <a href="order.html" class="button">Оформить заказ</a>
       <button class="close"></button>
     </section>
-    <section class="catalog" >
-      <div class="catalog__title"><h2>Собачки</h2></div>
+    <section class="catalog grid" style="--cols: 12">
+      <h2 class="catalog__title catalog__title--hide  item" style="--span: 12">Собачки</h2>
+      <!-- a временно для нагладности перехода по страницам, потом удалить -->
 
-      <div class="catalog__type catalog__type--hide item">
+      <div class="catalog__type catalog__type item" style="--span: 12">
         <input checked type="radio" name="catalog-type" class="catalog__type-input visually-hidden" id="dogs" /><label
-          class="catalog__type-label" for="dogs">Собачки</label>
+          class="catalog__type-label" for="dogs"><a href="catalog-dogs.html" style="color: #323232;">Собачки</a></label>
         <input type="radio" name="catalog-type" class="catalog__type-input visually-hidden" id="cats" /><label
-          class="catalog__type-label catalog__type-label--cats" for="cats">Котики</label>
+          class="catalog__type-label catalog__type-label--cats" for="cats"><a href="catalog-dogs.html"
+            style="color: #323232;">Котики</a></label>
       </div>
-      <div class="catalog__wrapper  grid" style="--cols: 12">
+      <div class="catalog__wrapper item grid" style="--span: 12; --cols: 12">
         <button class="catalog__filter-button">Фильтр</button>
         <div class="filter filter--hide item" style="--span: 3">
           <div class="filter__title-container">
@@ -225,7 +218,7 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" />
+                  <img src="./assets/img/ainu.jpg" alt="" />
                 </div>
               </div>
               <p class="catalog__description">Айну</p>
@@ -234,10 +227,10 @@
             </a>
           </li>
           <li class="catalog__item">
-            <a href="" class="catalog__item-link">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/afgan.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>
@@ -249,7 +242,7 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/barbet.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>
@@ -261,7 +254,7 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/basset.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>
@@ -273,7 +266,19 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/ainu.jpg" alt="" />
+                </div>
+              </div>
+              <p class="catalog__description">Айну</p>
+              <p class="catalog__cost">12000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./assets/img/afgan.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>
@@ -285,7 +290,7 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/barbet.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>
@@ -297,7 +302,7 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/basset.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>
@@ -309,7 +314,19 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/ainu.jpg" alt="" />
+                </div>
+              </div>
+              <p class="catalog__description">Айну</p>
+              <p class="catalog__cost">12000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./assets/img/afgan.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>
@@ -321,7 +338,19 @@
             <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
               <div class="catalog__image">
                 <div class="">
-                  <img src="./img/ainu.jpg" alt="" width="280" height="222" />
+                  <img src="./assets/img/barbet.jpg" alt="" width="280" height="222" />
+                </div>
+              </div>
+              <p class="catalog__description">Афганская борзая</p>
+              <p class="catalog__cost">15000</p>
+              <button class="catalog__button button">В корзину</button>
+            </a>
+          </li>
+          <li class="catalog__item">
+            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+              <div class="catalog__image">
+                <div class="">
+                  <img src="./assets/img/basset.jpg" alt="" width="280" height="222" />
                 </div>
               </div>
               <p class="catalog__description">Афганская борзая</p>

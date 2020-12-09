@@ -54,7 +54,7 @@
     color: transparent;
     border: none;
     background-color: transparent;
-    background-image: url(/source/img/svg/search.svg);
+    background-image: url(../assets/img/svg/search.svg);
     background-position: center;
     background-repeat: no-repeat;
     z-index: 2;
@@ -107,18 +107,18 @@
       height: 32px;
       top: 0;
       right: 0;
-      background-image: url(/source/img/svg/bonus.svg);
+      background-image: url(../assets/img/svg/bonus.svg);
       background-repeat: no-repeat;
       background-position: top center;
     }
     &--orders::before {
-      background-image: url(/source/img/svg/cube.svg);
+      background-image: url(../assets/img/svg/cube.svg);
     }
     &--actions::before {
-      background-image: url(/source/img/svg/actions.svg);
+      background-image: url(../assets/img/svg/actions.svg);
     }
     &--basket::before {
-      background-image: url(/source/img/svg/pet-house.svg);
+      background-image: url(../assets/img/svg/pet-house.svg);
     }
 
     &:hover,
@@ -134,7 +134,7 @@
   }
 
   &__toggle {
-    background-image: url(/source/img/svg/burger.svg);
+    background-image: url(../assets/img/svg/burger.svg);
     background-repeat: no-repeat;
     background-position: center center;
     display: flex;
@@ -144,7 +144,7 @@
     margin-top: 18px;
     margin-bottom: 17px;
     &--open {
-      background-image: url(/source/img/svg/close.svg);
+      background-image: url(../assets/img/svg/close.svg);
     }
   }
 
@@ -162,12 +162,12 @@
       padding-left: 46px;
       padding-top: 14px;
       padding-bottom: 14px;
-      background-image: url(/source/img/svg/burger.svg);
+      background-image: url(../assets/img/svg/burger.svg);
       background-repeat: no-repeat;
       background-position: left 20px center;
 
       &--open {
-        background-image: url(/source/img/svg/close.svg);
+        background-image: url(../assets/img/svg/close.svg);
       }
     }
 
@@ -214,7 +214,7 @@
         height: 100%;
         z-index: 2;
         opacity: 0.2;
-        background-image: url(/source/img/svg/search.svg);
+        background-image: url(../assets/img/svg/search.svg);
         background-position: center;
         background-repeat: no-repeat;
       }
