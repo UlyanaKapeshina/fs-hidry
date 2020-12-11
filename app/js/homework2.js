@@ -3,18 +3,16 @@ const COLOR_RANGE_MAX = 255;
 const elements = document.body.querySelectorAll(":not(script)");
 
 const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+const getRandomElement = (elementsList) =>
+  elementsList[getRandomInt(elementsList.length - 1)];
 
-const getRandomElement = (elementsList) => {
-  const element = elementsList[getRandomInt(elementsList.length - 1)];
-  return element;
+const createStyleTag = () => {
+  const styleTag = document.createElement("style");
+  document.head.appendChild(styleTag);
+  return document.querySelector("style");
 };
-let style = document.querySelector("style");
 
-if (!style) {
-  const newStyle = document.createElement("style");
-  document.querySelector("head").appendChild(newStyle);
-  style = document.querySelector("style");
-}
+let style = document.querySelector("style") || createStyleTag();
 
 const generateColorRanges = () => {
   const red = getRandomInt(255);
@@ -23,10 +21,17 @@ const generateColorRanges = () => {
   return [red, green, blue];
 };
 
-const addBackgroundClass = (element) => {
-  const [red, green, blue] = generateColorRanges();
+const createCssBgStyle = (className, red, green, blue) => {
+  return `
+  .${className} {
+    background-color: rgb(${red}, ${green}, ${blue});
+  }`;
+};
+
+const addBackgroundClass = (element, [red, green, blue]) => {
   const bgClassName = `bgcolor-${red}${green}${blue}`;
-  style.textContent = `${style.textContent}\n.${bgClassName} {\nbackground-color: rgb(${red}, ${green}, ${blue});\n}`;
+  const bgCssStyle = createCssBgStyle(bgClassName, red, green, blue);
+  style.textContent = style.textContent + bgCssStyle;
   element.classList.add(bgClassName);
 };
 const removeBackgroundClass = (element) => {
@@ -34,13 +39,13 @@ const removeBackgroundClass = (element) => {
     .filter((it) => it.includes("bgcolor"))
     .forEach((it) => {
       element.classList.remove(it);
-      const regexp = new RegExp(`\n\\.${it} \\{[^\\{\\}]*\\}`);
-      style.textContent = style.textContent.replace(regexp, "");
+      const findStyleRegexp = new RegExp(`\n\\.${it} \\{[^\\{\\}]*\\}`);
+      style.textContent = style.textContent.replace(findStyleRegexp, "");
     });
 };
 
 setInterval(() => {
-  addBackgroundClass(getRandomElement(elements));
+  addBackgroundClass(getRandomElement(elements), generateColorRanges());
 }, INTERVAL);
 
 setInterval(() => {
