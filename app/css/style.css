@@ -1136,6 +1136,30 @@ main {
 .filter__size-input:hover {
   border-color: #fbba3c;
 }
+.filter__result-message {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: -150px;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  box-shadow: 0px 0px 24px 3px #938f8f;
+  border-radius: 4px;
+}
+.filter__result-message button {
+  margin-left: 20px;
+  border: 0;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  color: steelblue;
+}
+.filter__result-message button:hover, .filter__result-message button:focus, .filter__result-message button:active {
+  text-decoration: none;
+}
 @media screen and (min-width: 640px) {
   .filter {
     width: 320px;

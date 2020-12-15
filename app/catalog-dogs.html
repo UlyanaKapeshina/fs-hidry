@@ -166,7 +166,7 @@
       </div>
       <div class="catalog__wrapper  grid" style="--cols: 12">
         <button class="catalog__filter-button">Фильтр</button>
-        <div class="filter filter--hide item" style="--span: 3">
+        <form class="filter filter--hide item" style="--span: 3; position: relative; overflow: visible; z-index: 10; ">
           <div class="filter__title-container">
             <button class="filter__close" aria-label="закрыть фильтр"></button>
             <h2 class="filter__title">Фильтр</h2>
@@ -175,13 +175,13 @@
           <fieldset class="filter__fieldset">
             <legend>Тип</legend>
             <div class="filter__panel">
-              <input class="checkbox-input" type="checkbox" name="type" id="type1" />
+              <input class="checkbox-input" type="checkbox" name="type" value="Охотничьи" id="type1" />
               <label class="checkbox-label" for="type1">Охотничьи</label>
-              <input class="checkbox-input" type="checkbox" name="type" id="type2" />
+              <input class="checkbox-input" type="checkbox" name="type" value="Компаньоны" id="type2" />
               <label class="checkbox-label" for="type2">Компаньоны</label>
-              <input class="checkbox-input" type="checkbox" name="type" id="type3" />
+              <input class="checkbox-input" type="checkbox" name="type" value="Декоративные" id="type3" />
               <label class="checkbox-label" for="type3">Декоративные</label>
-              <input class="checkbox-input" type="checkbox" name="type" id="type4" />
+              <input class="checkbox-input" type="checkbox" name="type" value="Служебные" id="type4" />
               <label class="checkbox-label" for="type4">Служебные</label>
             </div>
 
@@ -193,15 +193,15 @@
                 <input type="text" name="filter-search" id="filter-search" value="" placeholder="Быстрый поиск" />
                 <label for="filter-search"></label>
               </p>
-              <input class="checkbox-input" type="checkbox" name="features" id="features1" />
+              <input class="checkbox-input" type="checkbox" name="features" value="Отсутствует чувство страха" id="features1" />
               <label class="checkbox-label" for="features1">Отсутствует чувство страха</label>
-              <input class="checkbox-input" type="checkbox" name="features" id="features2" />
+              <input class="checkbox-input" type="checkbox" name="features" value="Мало линяет" id="features2" />
               <label class="checkbox-label" for="features2">Мало линяет</label>
-              <input class="checkbox-input" type="checkbox" name="features" id="features3" />
+              <input class="checkbox-input" type="checkbox" name="features" value="Отличное здоровье" id="features3" />
               <label class="checkbox-label" for="features3">Отличное здоровье</label>
-              <input class="checkbox-input" type="checkbox" name="features" id="features4" />
+              <input class="checkbox-input" type="checkbox" name="features" value="Хорошее послушание" id="features4" />
               <label class="checkbox-label" for="features4">Хорошее послушание</label>
-              <input class="checkbox-input" type="checkbox" name="features" id="features5" />
+              <input class="checkbox-input" type="checkbox" name="features" value="Очень преданная" id="features5" />
               <label class="checkbox-label" for="features5">Очень преданная</label>
               <button class="filter__button-more">Показать все</button>
             </div>
@@ -211,124 +211,36 @@
             <legend>Размер</legend>
             <div class="filter__panel">
               <label class="filter__size-label filter__size-label--row" for="">от
-                <input type="text" class="filter__size-input" placeholder="11" />
+                <input type="text" class="filter__size-input" placeholder="11" name="weightFrom" value="100"/>
               </label>
               <label for="" class="filter__size-label filter__size-label--row">до
-                <input type="text" class="filter__size-input" placeholder="21" />
+                <input type="text" class="filter__size-input" placeholder="21" name="weightTo" />
               </label>
             </div>
 
           </fieldset>
-        </div>
+          <!-- <template id="filter-result"> -->
+            <div class="filter__result-message" >
+              <span>Найдено <span class="filter__result-count"></span> шт </span><button type="submit">Показать</button>
+            </div>
+          <!-- </template> -->
+        </form>
         <ul class="catalog__list item" style="--span: 9">
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" />
+          <template id="catalog__li-template">
+            <li class="catalog__item">
+              <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
+                <div class="catalog__image">
+                  <div class="">
+                    <img src="./assets/img/ainu.jpg" alt="" />
+                  </div>
                 </div>
-              </div>
-              <p class="catalog__description">Айну</p>
-              <p class="catalog__cost">12000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="" class="catalog__item-link">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
-          <li class="catalog__item">
-            <a href="card.html" class="catalog__item-link" aria-label="на страницу товара">
-              <div class="catalog__image">
-                <div class="">
-                  <img src="./assets/img/ainu.jpg" alt="" width="280" height="222" />
-                </div>
-              </div>
-              <p class="catalog__description">Афганская борзая</p>
-              <p class="catalog__cost">15000</p>
-              <button class="catalog__button button">В корзину</button>
-            </a>
-          </li>
+                <p class="catalog__description">Айну</p>
+                <p class="catalog__cost">12000</p>
+                <button class="catalog__button button">В корзину</button>
+              </a>
+            </li>
+          </template>
+
         </ul>
         <button class="catalog__more button button--white" >Показать ещё</button>
       </div>
@@ -336,6 +248,7 @@
     <div class="shadow-layer shadow-layer--hide"></div>
     <div class="shadow-layer-filter shadow-layer-filter--hide"></div>
   </main>
+  <script src="js/homework3.js"></script>
 </body>
 
 </html>
