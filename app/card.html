@@ -55,7 +55,7 @@
   <main>
 
     <h1 class="visually-hidden">Страница товара</h1>
-    <section class="breadcrumbs ">
+    <section class="breadcrumbs">
       <ul class="breadcrumbs__list">
         <li class="breadcrumbs__item">
           <a href="catalog-dogs.html" class="breadcrumbs__link">Каталог товаров</a>
@@ -78,36 +78,38 @@
       <div class="card__inner  grid" style="--cols: 12">
         <div class="card__image item" style="--span: 5">
           <div>
-            <img src="assets/img/ainu.jpg" alt="Айну" width="280" height="222" />
+            <img src="" alt="" width="280" height="222" />
           </div>
         </div>
         <div class="item card__description" style="--span: 7">
           <table class="card__table">
-            <caption>Характеристика Айну</caption>
+            <caption>Характеристика
+              <!-- <span class="card__description-name">Айну</span> -->
+            </caption>
             <tr>
               <th>Тип</th>
-              <td>Охотничьи, Компаньоны</td>
+              <td class="card__type"></td>
             </tr>
             <tr>
               <th>Размер</th>
-              <td>Средняя (11-25кг)</td>
+              <td class="card__weight"></td>
             </tr>
             <tr>
               <th>Основные черты</th>
-              <td>Очень преданная, Дружелюбная, Подходит для охоты, Мало лает</td>
+              <td class="card__features"></td>
             </tr>
             <tr>
               <th>Частые заболевания</th>
-              <td>Глухота, Паралич гортани</td>
+              <td class="card__diseases"></td>
             </tr>
             <tr>
               <th>Интеллект</th>
-              <td>45%</td>
+              <td class="card__iq"></td>
             </tr>
             <tfoot>
               <tr>
                 <th>Стоимость</th>
-                <td>12 000₽</td>
+                <td class="card__price"></td>
               </tr>
             </tfoot>
           </table>
@@ -120,6 +122,8 @@
 
     </section>
   </main>
+  <script type="module" src="./js/mocks.js"></script>
+  <script type="module" src="./js/card.js"></script>
 </body>
 
 </html>

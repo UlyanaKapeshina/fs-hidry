@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "animal": "собака",
+    "name": "Айну",
+    "price": "12000",
+    "type": "Компаньоны",
+    "features": "Отсутствует чувство страха",
+    "weight": 30,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/ainu.jpg",
+      "alt": "Айну"
+    }
+  },
+  {
+    "id": 2,
+    "animal": "собака",
+    "name": "Афганская борзая",
+    "price": "15000",
+    "type": "Охотничьи",
+    "features": "Мало линяет",
+    "weight": 40,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/afgan.jpg",
+      "alt": "Афганская борзая"
+    }
+  },
+  {
+    "id": 3,
+    "animal": "собака",
+    "name": "Бассет",
+    "price": "14000",
+    "type": "Декоративные",
+    "features": "Отличное здоровье",
+    "weight": 20,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/basset.jpg",
+      "alt": "Бассет"
+    }
+  },
+  {
+    "id": 4,
+    "animal": "собака",
+    "name": "Барбет",
+    "price": "14000",
+    "type": "Служебные",
+    "features": "Хорошее послушание",
+    "weight": 30,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/barbet.jpg",
+      "alt": "Барбет"
+    }
+  },
+  {
+    "id": 5,
+    "animal": "собака",
+    "name": "Айну",
+    "price": "12000",
+    "type": "Компаньоны",
+    "features": "Отсутствует чувство страха",
+    "weight": 30,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/ainu.jpg",
+      "alt": "Айну"
+    }
+  },
+  {
+    "id": 6,
+    "animal": "собака",
+    "name": "Афганская борзая",
+    "price": "15000",
+    "type": "Охотничьи",
+    "features": "Мало линяет",
+    "weight": 40,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/afgan.jpg",
+      "alt": "Афганская борзая"
+    }
+  },
+  {
+    "id": 7,
+    "animal": "собака",
+    "name": "Бассет",
+    "price": "14000",
+    "type": "Декоративные",
+    "features": "Отличное здоровье",
+    "weight": 20,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/basset.jpg",
+      "alt": "Бассет"
+    }
+  },
+  {
+    "id": 8,
+    "animal": "собака",
+    "name": "Барбет",
+    "price": "14000",
+    "type": "Служебные",
+    "features": "Хорошее послушание",
+    "weight": 30,
+    "diseases": "Глухота",
+    "iq": "45%",
+    "image": {
+      "src": "./assets/img/barbet.jpg",
+      "alt": "Барбет"
+    }
+  }
+]
