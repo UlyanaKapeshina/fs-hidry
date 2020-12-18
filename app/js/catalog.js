@@ -1,36 +1,26 @@
 import * as api from "./api.js";
 import * as cardList from "./cardList.js";
-// import * as filterForm from "./filterForm.js";
-import * as filter from "./filter.js";
+import * as error from "./error.js";
+
+import * as filterForm from "./filterForm.js";
+import { randomSortCards } from "./util.js";
 
 let cardsData = [];
-const filterForm = document.querySelector(".filter");
-
-const filterChangeHandler = (evt) => {
-  const filters = filter.getFilters();
-  filter.setFiltersType(filters);
-  const dataCount = filter.getCount(cardsData);
-  filter.showResultMessage(dataCount, evt.target.offsetTop);
-};
-const filterSubmitHandler = (evt) => {
-  evt.preventDefault();
-
-  const filteredData = filter.getData(cardsData);
-  cardList.updateCards(filteredData);
-  filter.hideResultMessage();
-};
+const form = document.querySelector(".filter");
 
 const onLoadCards = (data) => {
-  const randomSortData = data.slice().sort(function () {
-    return Math.random() - 0.5;
-  });
-  cardsData = randomSortData;
+  cardsData = randomSortCards(data);
   cardList.renderCards(cardsData);
-  filterForm.addEventListener("input", filterChangeHandler);
-  filterForm.addEventListener("submit", filterSubmitHandler);
-};
-const onErrorCards = (error) => {
-  console.log(error);
+  filterForm.activateInputs();
+  filterForm.init(data);
 };
 
-api.loadCardsData(onLoadCards, onErrorCards);
+const onErrorCards = (err) => {
+  error.createErrorMessage(err, document.querySelector(".catalog__list"));
+  filterForm.disableInputs();
+};
+
+api
+  .getCards()
+  .then((data) => onLoadCards(data))
+  .catch((err) => onErrorCards(err));

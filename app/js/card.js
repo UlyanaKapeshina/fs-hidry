@@ -1,12 +1,11 @@
-import { mocks } from "./mocks.js";
 import * as api from "./api.js";
 
 const id = Number(location.search.replace("?id=", ""));
 
 const renderCard = ({
   name,
-  type,
-  weight,
+  types,
+  weightCategory,
   features,
   diseases,
   iq,
@@ -17,10 +16,10 @@ const renderCard = ({
   card.querySelector("h2").textContent = name;
   card.querySelector("img").src = image.src;
   card.querySelector("img").alt = image.alt;
-  card.querySelector(".card__type").textContent = type;
-  card.querySelector(".card__weight").textContent = weight;
-  card.querySelector(".card__features").textContent = features;
-  card.querySelector(".card__diseases").textContent = diseases;
+  card.querySelector(".card__type").textContent = types.join(", ");
+  card.querySelector(".card__weight").textContent = weightCategory;
+  card.querySelector(".card__features").textContent = features.join(", ");
+  card.querySelector(".card__diseases").textContent = diseases.join(", ");
   card.querySelector(".card__iq").textContent = iq;
   card.querySelector(".card__price").textContent = price;
 };
@@ -32,12 +31,14 @@ const renderBreadCrumbs = (name) => {
 };
 
 const onLoadCards = (data) => {
-  const cardData = data.find((it) => it.id === id);
-  renderCard(cardData);
-  renderBreadCrumbs(cardData.name);
+  renderCard(data);
+  renderBreadCrumbs(data.name);
 };
 const onErrorCards = (error) => {
   console.log(error);
 };
 
-api.loadCardsData(onLoadCards, onErrorCards);
+api
+  .getCardById(id)
+  .then((data) => onLoadCards(data))
+  .catch((err) => onErrorCards(err));

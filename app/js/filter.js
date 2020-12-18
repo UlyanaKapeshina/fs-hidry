@@ -1,48 +1,18 @@
-const filterForm = document.querySelector(".filter");
-export const getFilters = () => {
-  const typeFilters = filterForm.querySelectorAll("input[name=type]:checked");
-  const typeValues = Array.from(typeFilters).map((it) => it.value);
-  const featuresFilters = filterForm.querySelectorAll(
-    "input[name=features]:checked"
-  );
-  const featuresValues = Array.from(featuresFilters).map((it) => it.value);
-  const weightFromFilterValue = filterForm.querySelector(
-    "input[name=weightFrom]"
-  ).value;
-  const weightToFilterValue = filterForm.querySelector("input[name=weightTo]")
-    .value;
-  return [
-    typeValues,
-    featuresValues,
-    weightFromFilterValue,
-    weightToFilterValue,
-  ];
-};
-
-const filter = (
-  dataToFilter,
-  typeValues,
-  featuresValues,
-  weightFromFilterValue,
-  weightToFilterValue
-) => {
+const filter = (dataToFilter, types, features, weightFrom, weightTo) => {
   const filterTypes = function (item) {
-    return (
-      typeValues.length === 0 ||
-      typeValues.every((it) => item.type.includes(it))
-    );
+    return types.length === 0 || types.every((it) => item.type.includes(it));
   };
   const filterFeatures = function (item) {
-    return (
-      featuresValues.length === 0 ||
-      featuresValues.every((it) => item.features.includes(it))
-    );
+    const aaa =
+      features.length === 0 ||
+      features.every((it) => item.features.includes(it));
+    return aaa;
   };
   const filterWeightFrom = (item) => {
-    return !weightFromFilterValue || item.weight > weightFromFilterValue;
+    return !weightFrom || item.weight > weightFrom;
   };
   const filterWeightTo = (item) => {
-    return !weightToFilterValue || item.weight < weightToFilterValue;
+    return !weightTo || item.weight < weightTo;
   };
   return dataToFilter.filter((it) => {
     return (
@@ -78,16 +48,4 @@ export const getData = (data) => {
   }
   needUpdate = false;
   return filteredData;
-};
-
-const resultMessage = filterForm.querySelector(".filter__result-message");
-
-export const showResultMessage = (dataLength, top) => {
-  resultMessage.style.display = "flex";
-  resultMessage.style.top = `${top}px`;
-  resultMessage.querySelector(".filter__result-count").textContent = dataLength;
-};
-
-export const hideResultMessage = () => {
-  resultMessage.style.display = "none";
 };

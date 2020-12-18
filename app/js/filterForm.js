@@ -1,39 +1,84 @@
 import * as filter from "./filter.js";
 import * as cardList from "./cardList.js";
-import { mocks } from "./mocks.js";
 
-let dataToFilter = [];
+const form = document.querySelector(".filter");
+const resultMessage = form.querySelector(".filter__result-message");
 
-const filterForm = document.querySelector(".filter");
-const resultMessage = filterForm.querySelector(".filter__result-message");
+let cardsData = [];
 
-const showResultMessage = (dataLength, top) => {
+export const getFilters = () => {
+  const typeFilters = form.querySelectorAll("input[name=type]:checked");
+  const typeValues = Array.from(typeFilters).map((it) => it.value);
+  const featuresFilters = form.querySelectorAll("input[name=features]:checked");
+  const featuresValues = Array.from(featuresFilters).map((it) => it.value);
+  const weightFromFilterValue = form.querySelector("input[name=weightFrom]")
+    .value;
+  const weightToFilterValue = form.querySelector("input[name=weightTo]").value;
+  return [
+    typeValues,
+    featuresValues,
+    weightFromFilterValue,
+    weightToFilterValue,
+  ];
+};
+
+export const showResultMessage = (dataLength, top) => {
   resultMessage.style.display = "flex";
   resultMessage.style.top = `${top}px`;
   resultMessage.querySelector(".filter__result-count").textContent = dataLength;
 };
 
-const hideResultMessage = () => {
+export const hideResultMessage = (evt) => {
   resultMessage.style.display = "none";
 };
+let isActive = true;
+export const disableInputs = () => {
+  filterForm.querySelectorAll("input").forEach((it) => {
+    it.disabled = true;
+    isActive = false;
+  });
+};
+export const activateInputs = () => {
+  if (isActive) {
+    return;
+  }
+  filterForm.querySelectorAll("input").forEach((it) => {
+    it.disabled = false;
+  });
+};
+const moreClickHandler = () => {};
+const moreButton = form.querySelector(".filter__button-more");
+moreButton.addEventListener("click", moreClickHandler);
 
 const filterChangeHandler = (evt) => {
-  const filters = filter.getFilters();
+  const filters = getFilters();
   filter.setFiltersType(filters);
-  const dataCount = filter.getCount(dataToFilter);
+  const dataCount = filter.getCount(cardsData);
   showResultMessage(dataCount, evt.target.offsetTop);
 };
 const filterSubmitHandler = (evt) => {
   evt.preventDefault();
-  const filters = filter.getFilters();
-  filter.setFiltersType(...filters);
-  const filteredData = filter.getData(dataToFilter);
+  const filteredData = filter.getData(cardsData);
   cardList.updateCards(filteredData);
   hideResultMessage();
 };
 
-export const activateFilter = (data) => {
-  dataToFilter = data;
-  filterForm.addEventListener("input", filterChangeHandler);
-  filterForm.addEventListener("submit", filterSubmitHandler);
+export const init = (data) => {
+  cardsData = data;
+  form.addEventListener("input", filterChangeHandler);
+  form.addEventListener("submit", filterSubmitHandler);
 };
+
+// const legends = form.querySelectorAll("legend");
+// legends.forEach((it) => {
+//   it.addEventListener("click", function () {
+//     it.classList.toggle("active");
+//     const panel = it.nextElementSibling;
+//     const maxHeight = Number(panel.style.maxHeight.replace("px", ""));
+//     if (!panel.style.maxHeight) {
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + "px";
+//     }
+//   });
+// });

@@ -3,3 +3,8 @@ export const removeElements = (elements) => {
     element.remove();
   });
 };
+export const randomSortCards = (data) => {
+  return data.slice().sort(function () {
+    return Math.random() - 0.5;
+  });
+};
