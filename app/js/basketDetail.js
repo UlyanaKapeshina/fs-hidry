@@ -13,6 +13,7 @@ export default class BasketDetail {
     this.count = this.result.querySelector(".basket__result-count");
     this.sum = this.result.querySelector(".basket__result-sum");
     this.basketEmptyMessage = this.basketDetail.querySelector(".basket__empty");
+    this.onDataChange = this.onDataChange.bind(this);
   }
   init() {
     this.basketSmallElem.addEventListener(
@@ -37,7 +38,7 @@ export default class BasketDetail {
 
   showBasketDetail(evt) {
     evt.preventDefault();
-    this.model.addObserver(this.onDataChange.bind(this));
+    this.model.addObserver(this.onDataChange);
     this.basketDetail.classList.remove("basket--hide");
     this.shadowLayer.classList.remove("shadow-layer--hide");
     this.closeBasketDetailButton.addEventListener(
@@ -47,7 +48,7 @@ export default class BasketDetail {
   }
 
   hideBasketDetail() {
-    this.model.removeObserver(this.onDataChange.bind(this));
+    this.model.removeObserver(this.onDataChange);
     this.basketDetail.classList.add("basket--hide");
     this.shadowLayer.classList.add("shadow-layer--hide");
   }
