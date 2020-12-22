@@ -1,3 +1,4 @@
+import BasketItem from "./basketItem.js";
 import { removeElements } from "./util.js";
 export default class BasketDetail {
   constructor(model) {
@@ -7,19 +8,16 @@ export default class BasketDetail {
     this.shadowLayer = document.querySelector(".shadow-layer");
     this.closeBasketDetailButton = this.basketDetail.querySelector(".close");
     this.basketInner = this.basketDetail.querySelector(".basket__inner");
-    this.itemTemplate = this.basketDetail.querySelector("#basket-item");
     this.itemList = this.basketDetail.querySelector(".basket__list");
     this.result = this.basketDetail.querySelector(".basket__result");
     this.count = this.result.querySelector(".basket__result-count");
     this.sum = this.result.querySelector(".basket__result-sum");
     this.basketEmptyMessage = this.basketDetail.querySelector(".basket__empty");
     this.onDataChange = this.onDataChange.bind(this);
+    this.init();
   }
   init() {
-    this.basketSmallElem.addEventListener(
-      "click",
-      this.showBasketDetail.bind(this)
-    );
+    this.basketSmallElem.addEventListener("click", this.showBasketDetail.bind(this));
   }
 
   onDataChange(cards) {
@@ -41,10 +39,7 @@ export default class BasketDetail {
     this.model.addObserver(this.onDataChange);
     this.basketDetail.classList.remove("basket--hide");
     this.shadowLayer.classList.remove("shadow-layer--hide");
-    this.closeBasketDetailButton.addEventListener(
-      "click",
-      this.hideBasketDetail.bind(this)
-    );
+    this.closeBasketDetailButton.addEventListener("click", this.hideBasketDetail.bind(this));
   }
 
   hideBasketDetail() {
@@ -73,16 +68,12 @@ export default class BasketDetail {
     }, []);
 
     uniqItemsWithCount.forEach((it) => {
-      const item = this.itemTemplate.content.cloneNode(true);
-      item.querySelector("img").src = it.image.src;
-      item.querySelector("img").alt = it.image.alt;
-      item.querySelector(".basket__item-name").textContent = it.name;
-      item.querySelector(".count-controls__result").textContent = it.count;
-      item.querySelector(".basket__cost").textContent = it.price * it.count;
-      fragment.appendChild(item);
+      const item = new BasketItem(it);
+      fragment.appendChild(item.createItem());
     });
     this.itemList.appendChild(fragment);
   }
+
   removeItems() {
     const items = this.basketDetail.querySelectorAll(".basket__item");
     removeElements(items);

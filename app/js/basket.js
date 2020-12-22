@@ -1,4 +1,3 @@
-import { removeElements } from "./util.js";
 export default class Basket {
   constructor() {
     this.items = [];
@@ -15,7 +14,7 @@ export default class Basket {
   }
   addObserver(observer) {
     this._observers.push(observer);
-    this.notify(this.items);
+    observer(this.items);
   }
   removeObserver(observer) {
     this._observers = this._observers.filter((it) => observer !== it);
@@ -23,5 +22,11 @@ export default class Basket {
 
   notify(...update) {
     this._observers.forEach((observer) => observer(...update));
+
+    // document.dispatchEvent(
+    //   new CustomEvent("basketModelChange", {
+    //     detail: { data: update },
+    //   })
+    // );
   }
 }

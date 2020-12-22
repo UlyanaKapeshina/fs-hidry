@@ -5,7 +5,7 @@ import * as filterForm from "./filterForm.js";
 import { randomSortCards } from "./util.js";
 import Basket from "./basket.js";
 import BasketDetail from "./basketDetail.js";
-import BasketSmall from "./basketView.js";
+import BasketSmall from "./basketSmall.js";
 
 let cardsData = [];
 
@@ -26,6 +26,7 @@ const onLoadCards = (data) => {
   cardList.renderCards(cardsData, cardButtonClickHandler);
   filterForm.activateInputs();
   filterForm.init(data, filterChangeHandler);
+
   basketSmall.init();
   basketDetail.init();
 };

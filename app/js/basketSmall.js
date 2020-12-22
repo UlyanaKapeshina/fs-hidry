@@ -1,4 +1,3 @@
-import { removeElements } from "./util.js";
 export default class BasketSmall {
   constructor(model) {
     this.model = model;
@@ -9,6 +8,7 @@ export default class BasketSmall {
 
   init() {
     this.model.addObserver(this.onDataChange);
+    document.addEventListener("basketModelChange", this.onDataChange);
   }
 
   onDataChange(data) {
