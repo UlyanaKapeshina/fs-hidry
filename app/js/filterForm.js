@@ -5,6 +5,7 @@ const form = document.querySelector(".filter");
 const resultMessage = form.querySelector(".filter__result-message");
 
 let cardsData = [];
+let onSubmitHandler;
 
 export const getFilters = () => {
   const typeFilters = form.querySelectorAll("input[name=type]:checked");
@@ -33,7 +34,7 @@ export const hideResultMessage = (evt) => {
 };
 let isActive = true;
 export const disableInputs = () => {
-  filterForm.querySelectorAll("input").forEach((it) => {
+  form.querySelectorAll("input").forEach((it) => {
     it.disabled = true;
     isActive = false;
   });
@@ -59,26 +60,13 @@ const filterChangeHandler = (evt) => {
 const filterSubmitHandler = (evt) => {
   evt.preventDefault();
   const filteredData = filter.getData(cardsData);
-  cardList.updateCards(filteredData);
+  onSubmitHandler(filteredData);
   hideResultMessage();
 };
 
-export const init = (data) => {
+export const init = (data, onSubmit) => {
   cardsData = data;
+  onSubmitHandler = onSubmit;
   form.addEventListener("input", filterChangeHandler);
   form.addEventListener("submit", filterSubmitHandler);
 };
-
-// const legends = form.querySelectorAll("legend");
-// legends.forEach((it) => {
-//   it.addEventListener("click", function () {
-//     it.classList.toggle("active");
-//     const panel = it.nextElementSibling;
-//     const maxHeight = Number(panel.style.maxHeight.replace("px", ""));
-//     if (!panel.style.maxHeight) {
-//       panel.style.maxHeight = null;
-//     } else {
-//       panel.style.maxHeight = panel.scrollHeight + "px";
-//     }
-//   });
-// });

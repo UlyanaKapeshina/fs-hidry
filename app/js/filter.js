@@ -1,12 +1,12 @@
 const filter = (dataToFilter, types, features, weightFrom, weightTo) => {
   const filterTypes = function (item) {
-    return types.length === 0 || types.every((it) => item.type.includes(it));
+    return types.length === 0 || types.every((it) => item.types.includes(it));
   };
   const filterFeatures = function (item) {
-    const aaa =
+    return (
       features.length === 0 ||
-      features.every((it) => item.features.includes(it));
-    return aaa;
+      features.every((it) => item.features.includes(it))
+    );
   };
   const filterWeightFrom = (item) => {
     return !weightFrom || item.weight > weightFrom;

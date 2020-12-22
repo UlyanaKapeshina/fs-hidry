@@ -49,103 +49,105 @@
           <a href="" aria-label="Корзина">
             <p class="menu__item-name">Корзина (<span>5</span>) </p>
           </a>
+          <section class="basket">
+            <h2 class="basket__title">Ваша корзина</h2>
+            <fieldset class="basket__controls">
+              <p class="basket__check-all">
+                <input class="checkbox-input" type="checkbox" name="check-all" id="check-all" />
+                <label class="checkbox-label" for="check-all">Выбрать всё</label>
+              </p>
+              <button class="basket__delete-all">Удалить всё
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g opacity="0.5">
+                    <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path
+                      d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
+                      stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </g>
+                </svg>
+              </button>
+            </fieldset>
+            <ul class="basket__list">
+              <li class="basket__item">
+                <p class="basket__item-checkbox">
+                  <input class="checkbox-input" type="checkbox" name="check-item1" id="check-item1" />
+                  <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
+                </p>
+                <p class="basket__item-img">
+                  <img src="./assets/img/ainu.jpg" alt="Айну" width="100" height="79">
+                </p>
+                <p class="basket__item-name">Айну</p>
+                <div class="count-controls">
+                  <button class="count-controls__button">-</button>
+                  <output class="count-controls__result">1</output>
+                  <button class="count-controls__button">+</button>
+                </div>
+                <p class="basket__cost basket__cost--desktop">12 000₽</p>
+                <button class="basket__item-remove">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.5">
+                      <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
+                        stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </button>
+              </li>
+              <li class="basket__item">
+                <p class="basket__item-checkbox">
+                  <input class="checkbox-input" type="checkbox" name="check-item1" id="check-item1" />
+                  <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
+                </p>
+                <p class="basket__item-img">
+                  <img src="./assets/img/ainu.jpg" alt="Айну" width="100" height="79">
+                </p>
+                <p class="basket__item-name">Айну</p>
+                <div class="count-controls">
+                  <button class="count-controls__button">-</button>
+                  <output class="count-controls__result">1</output>
+                  <button class="count-controls__button">+</button>
+                </div>
+                <p class="basket__cost basket__cost--desktop">12 000₽</p>
+                <button class="basket__item-remove">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g opacity="0.5">
+                      <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
+                        stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </g>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+            <p class="basket__result">2 товара на сумму <span>27 000₽</span></p>
+            <a href="order.html" class="button">Оформить заказ</a>
+            <button class="close"></button>
+          </section>
+          <div class="shadow-layer"></div>
         </li>
       </ul>
     </nav>
   </header>
   <main>
     <h1 class="visually-hidden">Магазин собачек и котиков</h1>
-    <section class="basket">
-      <h2 class="basket__title">Ваша корзина</h2>
-      <fieldset class="basket__controls">
-        <p class="basket__check-all">
-          <input class="checkbox-input" type="checkbox" name="check-all" id="check-all" />
-          <label class="checkbox-label" for="check-all">Выбрать всё</label>
-        </p>
-        <button class="basket__delete-all">Удалить всё
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g opacity="0.5">
-              <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path
-                d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
-                stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-              <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </g>
-          </svg>
-        </button>
-      </fieldset>
-      <ul class="basket__list">
-        <li class="basket__item">
-          <p class="basket__item-checkbox">
-            <input class="checkbox-input" type="checkbox" name="check-item1" id="check-item1" />
-            <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
-          </p>
-          <p class="basket__item-img">
-            <img src="./assets/img/ainu.jpg" alt="Айну" width="100" height="79">
-          </p>
-          <p class="basket__item-name">Айну</p>
-          <div class="count-controls">
-            <button class="count-controls__button">-</button>
-            <output class="count-controls__result">1</output>
-            <button class="count-controls__button">+</button>
-          </div>
-          <p class="basket__cost basket__cost--desktop">12 000₽</p>
-          <button class="basket__item-remove">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.5">
-                <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
-                  stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </g>
-            </svg>
-          </button>
-        </li>
-        <li class="basket__item">
-          <p class="basket__item-checkbox">
-            <input class="checkbox-input" type="checkbox" name="check-item1" id="check-item1" />
-            <label class="checkbox-label checkbox-label--empty" for="check-item1"></label>
-          </p>
-          <p class="basket__item-img">
-            <img src="./assets/img/ainu.jpg" alt="Айну" width="100" height="79">
-          </p>
-          <p class="basket__item-name">Айну</p>
-          <div class="count-controls">
-            <button class="count-controls__button">-</button>
-            <output class="count-controls__result">1</output>
-            <button class="count-controls__button">+</button>
-          </div>
-          <p class="basket__cost basket__cost--desktop">12 000₽</p>
-          <button class="basket__item-remove">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g opacity="0.5">
-                <path d="M2.25 4.5H3.75H15.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path
-                  d="M6 4.5V3C6 2.60218 6.15804 2.22064 6.43934 1.93934C6.72064 1.65804 7.10218 1.5 7.5 1.5H10.5C10.8978 1.5 11.2794 1.65804 11.5607 1.93934C11.842 2.22064 12 2.60218 12 3V4.5M14.25 4.5V15C14.25 15.3978 14.092 15.7794 13.8107 16.0607C13.5294 16.342 13.1478 16.5 12.75 16.5H5.25C4.85218 16.5 4.47064 16.342 4.18934 16.0607C3.90804 15.7794 3.75 15.3978 3.75 15V4.5H14.25Z"
-                  stroke="#25282B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M7.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M10.5 8.25V12.75" stroke="#25282B" stroke-width="2" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </g>
-            </svg>
-          </button>
-        </li>
-      </ul>
-      <p class="basket__result">2 товара на сумму <span>27 000₽</span></p>
-      <a href="order.html" class="button">Оформить заказ</a>
-      <button class="close"></button>
-    </section>
+
     <section class="catalog" >
       <div class="catalog__title"><h2>Собачки</h2></div>
 
@@ -324,7 +326,7 @@
         <button class="catalog__more button button--white" >Показать ещё</button>
       </div>
     </section>
-    <div class="shadow-layer"></div>
+
     <div class="shadow-layer-filter shadow-layer-filter--hide"></div>
   </main>
 </body>

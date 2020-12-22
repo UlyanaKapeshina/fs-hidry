@@ -1,6 +1,6 @@
 import { adaptDataToClient } from "./adapter.js";
 
-const URL = "http://localhost:3000/api/cards.json";
+const URL = "http://localhost:3002/api/cards.json";
 
 var SUCCESS_CODE = 200;
 function makeRequest(method, url) {
