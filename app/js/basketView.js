@@ -4,10 +4,11 @@ export default class BasketSmall {
     this.model = model;
     this.basketSmall = document.querySelector(".menu__item--basket");
     this.basketSmallCount = this.basketSmall.querySelector("span");
+    this.onDataChange = this.onDataChange.bind(this);
   }
 
   init() {
-    this.model.addObserver(this.onDataChange.bind(this));
+    this.model.addObserver(this.onDataChange);
   }
 
   onDataChange(data) {
