@@ -1,16 +1,17 @@
 import * as api from "./api.js";
 import * as cardList from "./cardList.js";
 import * as error from "./error.js";
-import BasketView from "./basketView.js";
-
 import * as filterForm from "./filterForm.js";
 import { randomSortCards } from "./util.js";
 import Basket from "./basket.js";
+import BasketDetail from "./basketDetail.js";
+import BasketSmall from "./basketView.js";
 
 let cardsData = [];
 
 const basket = new Basket();
-const basketView = new BasketView(basket);
+const basketSmall = new BasketSmall(basket);
+const basketDetail = new BasketDetail(basket);
 
 const cardButtonClickHandler = (item) => {
   basket.addItem(item);
@@ -25,7 +26,8 @@ const onLoadCards = (data) => {
   cardList.renderCards(cardsData, cardButtonClickHandler);
   filterForm.activateInputs();
   filterForm.init(data, filterChangeHandler);
-  basketView.init();
+  basketSmall.init();
+  basketDetail.init();
 };
 
 const onErrorCards = (err) => {
