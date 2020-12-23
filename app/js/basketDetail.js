@@ -23,6 +23,9 @@ export default class BasketDetail {
   onDataChange(cards) {
     this.renderBasketDetail(cards);
   }
+  onStorageChange(evt) {
+    debugger;
+  }
 
   renderBasketDetail(cards) {
     if (cards.length > 0) {
@@ -51,26 +54,11 @@ export default class BasketDetail {
   renderItems(cards) {
     this.removeItems();
     const fragment = document.createDocumentFragment();
-    const items = cards;
-
-    const uniqItemsWithCount = items.reduce((acc, item) => {
-      const index = acc.indexOf(item);
-
-      if (index !== -1) {
-        const repeatingItem = acc[index];
-        repeatingItem.count++;
-        return acc;
-      }
-      item.count = 1;
-      acc.push(item);
-
-      return acc;
-    }, []);
-
-    uniqItemsWithCount.forEach((it) => {
-      const item = new BasketItem(it);
+    cards.forEach((it) => {
+      const item = new BasketItem(it, this.model);
       fragment.appendChild(item.createItem());
     });
+
     this.itemList.appendChild(fragment);
   }
 
@@ -80,11 +68,14 @@ export default class BasketDetail {
   }
 
   renderResult(cards) {
-    const resultSum = cards.reduce((acc, item) => {
-      return acc + Number(item.price);
+    const resultSum = cards.reduce((acc, it) => {
+      return acc + Number(it.data.price);
+    }, 0);
+    const resultCount = cards.reduce((acc, it) => {
+      return acc + Number(it.count);
     }, 0);
     this.sum.textContent = resultSum;
-    this.count.textContent = cards.length;
+    this.count.textContent = resultCount;
   }
   showEmptyBasket() {
     this.basketInner.style.display = "none";

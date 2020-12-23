@@ -11,8 +11,11 @@ export default class BasketSmall {
     document.addEventListener("basketModelChange", this.onDataChange);
   }
 
-  onDataChange(data) {
-    this.renderCount(data.length);
+  onDataChange(data = {}) {
+    const count = data.reduce((acc, it) => {
+      return acc + it.count;
+    }, 0);
+    this.renderCount(count);
   }
 
   renderCount(count) {

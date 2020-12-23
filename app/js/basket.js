@@ -1,20 +1,36 @@
 export default class Basket {
   constructor() {
-    this.items = [];
     this._observers = [];
+    this.onStorageChange = this.onStorageChange.bind(this);
+    window.addEventListener("storage", this.onStorageChange, false);
   }
 
   addItem(item) {
-    this.items.push(item);
-    this.notify(this.items);
+    const items = JSON.parse(localStorage.getItem("basketCards")) || [];
+
+    const index = items.findIndex((it) => it.data.id === item.id);
+
+    if (index !== -1) {
+      items[index].count++;
+    } else {
+      items.push({
+        data: item,
+        count: 1,
+      });
+    }
+    localStorage.setItem("basketCards", JSON.stringify(items));
+    this.notify(items);
   }
   removeItem(item) {
-    this.items = this.items.filter((it) => it.id !== item.id);
-    this.notify(this.items);
+    let items = JSON.parse(localStorage.getItem("basketCards")) || [];
+    items = items.filter((it) => it.data.id !== item.id);
+    localStorage.setItem("basketCards", JSON.stringify(items));
+    this.notify(items);
   }
   addObserver(observer) {
     this._observers.push(observer);
-    observer(this.items);
+    const items = JSON.parse(localStorage.getItem("basketCards")) || [];
+    observer(items);
   }
   removeObserver(observer) {
     this._observers = this._observers.filter((it) => observer !== it);
@@ -22,11 +38,17 @@ export default class Basket {
 
   notify(...update) {
     this._observers.forEach((observer) => observer(...update));
+  }
+  onStorageChange(evt) {
+    if (evt.storageArea.length === 0) {
+      this.notify([]);
+      return;
+    }
+    if (evt.key !== "basketCards") {
+      return;
+    }
 
-    // document.dispatchEvent(
-    //   new CustomEvent("basketModelChange", {
-    //     detail: { data: update },
-    //   })
-    // );
+    const newData = JSON.parse(evt.newValue);
+    this.notify(newData);
   }
 }
