@@ -64,6 +64,7 @@ const logoHandler = (evt) => {
     }, INTERVAL);
   }
   if (logoClicks > 5 && isPaintStart) {
+    logoClicks = 0;
     isPaintStart = false;
     clearInterval(addBackgroundClassInterval);
     clearInterval(removeBackgroundClassInterval);
