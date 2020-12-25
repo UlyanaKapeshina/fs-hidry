@@ -117,14 +117,22 @@
     &--actions::before {
       background-image: url(../assets/img/svg/actions.svg);
     }
-    &--basket::before {
-      background-image: url(../assets/img/svg/pet-house.svg);
+    &--basket {
+      position: relative;
+      &::before {
+        background-image: url(../assets/img/svg/pet-house.svg);
+      }
     }
 
     &:hover,
     &:focus {
       opacity: 0.5;
     }
+  }
+  &__item-price {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
   &__item-name {
     width: 100%;

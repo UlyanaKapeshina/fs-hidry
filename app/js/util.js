@@ -1,7 +1,5 @@
 export const removeElements = (elements) => {
-  elements.forEach(function (element) {
-    element.remove();
-  });
+  Array.from(elements).forEach((it) => it.remove());
 };
 export const randomSortCards = (data) => {
   return data.slice().sort(function () {

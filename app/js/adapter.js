@@ -53,27 +53,12 @@ const AnimalTypes = {
 };
 
 const getAnimalSize = (type, weight) => {
-  const typeName = Object.keys(AnimalType).find(
-    (it) => AnimalType[it] === type
-  );
-  const category = AnimalSize[typeName].find(
-    (it) => weight > it.min && weight < it.max
-  );
+  const typeName = Object.keys(AnimalType).find((it) => AnimalType[it] === type);
+  const category = AnimalSize[typeName].find((it) => weight > it.min && weight < it.max);
   return `${category.category} (${category.min}-${category.max}кг)`;
 };
 
-export const adaptDataToClient = ({
-  id,
-  name,
-  animal,
-  type,
-  weight,
-  features,
-  diseases,
-  iq,
-  price,
-  image,
-}) => {
+export const adaptDataToClient = ({ id, name, animal, type, weight, features, diseases, iq, price, image }) => {
   return {
     id,
     name,

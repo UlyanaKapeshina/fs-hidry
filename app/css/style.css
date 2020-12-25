@@ -83,6 +83,9 @@ main {
 .button--big {
   padding: 18px 20px;
 }
+.button--basket {
+  background-color: #e19605;
+}
 .button--white {
   padding-left: 10px;
   padding-right: 10px;
@@ -463,11 +466,19 @@ main {
 .menu__item--actions::before {
   background-image: url(../assets/img/svg/actions.svg);
 }
+.menu__item--basket {
+  position: relative;
+}
 .menu__item--basket::before {
   background-image: url(../assets/img/svg/pet-house.svg);
 }
 .menu__item:hover, .menu__item:focus {
   opacity: 0.5;
+}
+.menu__item-price {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .menu__item-name {
   width: 100%;

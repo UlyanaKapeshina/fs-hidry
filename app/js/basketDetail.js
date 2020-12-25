@@ -14,7 +14,7 @@ export default class BasketDetail {
     this.sum = this.result.querySelector(".basket__result-sum");
     this.basketEmptyMessage = this.basketDetail.querySelector(".basket__empty");
     this.onDataChange = this.onDataChange.bind(this);
-    this.init();
+    this.removeAllCards = this.removeAllCards.bind(this);
   }
   init() {
     this.basketSmallElem.addEventListener("click", this.showBasketDetail.bind(this));
@@ -22,9 +22,6 @@ export default class BasketDetail {
 
   onDataChange(cards) {
     this.renderBasketDetail(cards);
-  }
-  onStorageChange(evt) {
-    debugger;
   }
 
   renderBasketDetail(cards) {
@@ -43,12 +40,16 @@ export default class BasketDetail {
     this.basketDetail.classList.remove("basket--hide");
     this.shadowLayer.classList.remove("shadow-layer--hide");
     this.closeBasketDetailButton.addEventListener("click", this.hideBasketDetail.bind(this));
+    this.basketDetail.querySelector(".basket__delete-all").addEventListener("click", this.removeAllCards);
   }
 
   hideBasketDetail() {
     this.model.removeObserver(this.onDataChange);
     this.basketDetail.classList.add("basket--hide");
     this.shadowLayer.classList.add("shadow-layer--hide");
+  }
+  removeAllCards() {
+    this.model.removeAll();
   }
 
   renderItems(cards) {
@@ -69,7 +70,7 @@ export default class BasketDetail {
 
   renderResult(cards) {
     const resultSum = cards.reduce((acc, it) => {
-      return acc + Number(it.data.price);
+      return acc + Number(it.data.price * it.count);
     }, 0);
     const resultCount = cards.reduce((acc, it) => {
       return acc + Number(it.count);

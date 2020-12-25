@@ -2,6 +2,7 @@ export default class Basket {
   constructor() {
     this._observers = [];
     this.onStorageChange = this.onStorageChange.bind(this);
+    this.addItem = this.addItem.bind(this);
     window.addEventListener("storage", this.onStorageChange, false);
   }
 
@@ -24,6 +25,21 @@ export default class Basket {
   removeItem(item) {
     let items = JSON.parse(localStorage.getItem("basketCards")) || [];
     items = items.filter((it) => it.data.id !== item.id);
+    localStorage.setItem("basketCards", JSON.stringify(items));
+    this.notify(items);
+  }
+  removeAll() {
+    localStorage.removeItem("basketCards");
+    this.notify([]);
+  }
+  decreaseItemCount(item) {
+    const items = JSON.parse(localStorage.getItem("basketCards")) || [];
+
+    const index = items.findIndex((it) => it.data.id === item.id);
+
+    if (index !== -1) {
+      items[index].count--;
+    }
     localStorage.setItem("basketCards", JSON.stringify(items));
     this.notify(items);
   }
