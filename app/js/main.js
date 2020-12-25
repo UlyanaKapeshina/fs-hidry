@@ -5,7 +5,7 @@ import BasketSmall from "./basketSmall.js";
 import { CatalogPage } from "./catalogPage.js";
 import { CardPage } from "./cardPage.js";
 import { Api } from "./api.js";
-const cardsUrl = "http://127.0.0.1:5500/app/api/cards.json";
+const cardsUrl = "http://localhost:3000/api/cards.json";
 
 const basket = new Basket();
 const basketSmall = new BasketSmall(basket);
